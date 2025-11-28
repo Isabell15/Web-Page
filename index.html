@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plataforma de Bienestar Infantil</title>
+    <link rel="stylesheet" href="CSS/estilo1.css" />
+    <link rel="stylesheet" href="CSS/estilo0.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+
+    <header class="animated-header">
+      <div class="header-content">
+        <div class="title-container">
+          <h1>Bienvenidos a <span class="highlight">Creciendo Sanos</span></h1>
+          <p>
+            Promoviendo el bienestar integral de los niños 
+          </p>
+        </div>
+      </div>
+    
+      <nav class="main-nav">
+        <ul>
+          <li>
+            <a href="HTML/causas.html"
+              ><i class="fas fa-weight"></i> Obesidad Infantil</a
+            >
+          </li>
+          <li>
+            <a href="HTML/saludmental.html"
+              ><i class="fas fa-brain"></i> Salud Mental</a
+            >
+          </li>
+          <li>
+            <a href="HTML/actividades.html" class="active"
+              ><i class="fas fa-running"></i> Actividades</a
+            >
+          </li>
+          <li>
+            <a href="HTML/bienestardigital.html"
+              ><i class="fas fa-tablet-alt"></i> Bienestar Digital</a
+            >
+          </li>
+          <li>
+            <a href="HTML/recomendaciones.html"
+              ><i class="fas fa-clipboard-list"></i> Recomendaciones</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Carousel -->
+    <div class="carousel-container">
+      <div class="carousel-wrapper">
+        <div class="carousel-cards">
+          <div class="carousel-card" data-section="HTML/causas.html">
+            <div class="card-overlay"></div>
+            <img src="IMG/carobesdiad.png" alt="Obesidad Infantil" />
+            <div class="card-content">
+              <h3>Obesidad Infantil</h3>
+              <div class="card-info">
+                <a href="HTML/causas.html" class="card-button">Ver más</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-card" data-section="HTML/saludmental.html">
+            <div class="card-overlay"></div>
+            <img src="IMG/cardsalud.png" alt="Salud Mental" />
+            <div class="card-content">
+              <h3>Salud Mental</h3>
+              <div class="card-info">
+                <a href="HTML/saludmental.html" class="card-button">Ver más</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-card" data-section="HTML/recomendaciones.html">
+            <div class="card-overlay"></div>
+            <img src="IMG/cardrecomend.png" alt="Recomendaciones" />
+            <div class="card-content">
+              <h3>Recomendaciones</h3>
+              <div class="card-info">
+                <a href="HTML/recomendaciones.html" class="card-button">Ver más</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-card" data-section="HTML/bienestardigital.html">
+            <div class="card-overlay"></div>
+            <img src="IMG/cardbienestar.png" alt="Bienestar Digital" />
+            <div class="card-content">
+              <h3>Bienestar Digital</h3>
+              <div class="card-info">
+                <a href="HTML/bienestardigital.html" class="card-button">Ver más</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-card" data-section="HTML/actividades.html">
+            <div class="card-overlay"></div>
+            <img src="IMG/cardactivid.png" alt="Actividades" />
+            <div class="card-content">
+              <h3>Juego Educativos</h3>
+              <div class="card-info">
+                <a href="HTML/actividades.html" class="card-button">Ver más</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-controls">
+        <button class="prev-button" id="prevBtn">&#10094;</button>
+        <div class="carousel-dots">
+          <span class="dot active" data-index="0"></span>
+          <span class="dot" data-index="1"></span>
+          <span class="dot" data-index="2"></span>
+          <span class="dot" data-index="3"></span>
+        </div>
+        <button class="next-button" id="nextBtn">&#10095;</button>
+      </div>
+    </div>
+
+    <div class="motivational-message">
+      <p>
+        El cambio no siempre es fácil, pero con dedicación puedes lograrlo.
+        <span class="emphasis">Mejora tu bienestar.</span>
+      </p>
+      <p class="highlight-message">¡Enfócate en ti mismo!</p>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Creciendo Sanos. Todos los derechos reservados.</p>
+    </footer>
+    <script src="JS/scriptIndex.js"></script>
+    <script src="JS/script.js"></script>
+
+  </body>
+</html>
