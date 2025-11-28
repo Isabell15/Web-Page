@@ -1,0 +1,624 @@
+
+/* Fuentes y estilos principal*/
+body {
+    font-family: 'Quicksand', sans-serif;
+    color: #2e4053;
+    line-height: 1.7;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 80px;
+    background-color: #f9f9f9;
+}
+
+/* Fondo el de los ni;os*/
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.pexels.com/photos/8613362/pexels-photo-8613362.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.35;
+    z-index: -1;
+    filter: brightness(1.1);
+}
+
+/* Header con animación */
+.animated-header {
+    text-align: center;
+    padding: 30px 10px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(245, 251, 255, 0.9));
+    border-bottom: 6px solid #85c1e9;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.animated-header::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 10px;
+    background: linear-gradient(90deg, 
+        rgba(133, 193, 233, 0), 
+        rgba(133, 193, 233, 0.8), 
+        rgba(133, 193, 233, 0));
+    top: 0;
+    left: -100%;
+    animation: shimmer 5s infinite linear;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100%); }
+}
+
+.header-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.animated-header h1 {
+    font-size: 2.8rem;
+    color: #2874a6;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px #d6eaf8;
+    font-family: 'Baloo 2', cursive;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    position: relative;
+    display: inline-block;
+}
+
+.animated-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 10%;
+    width: 80%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #3498db, transparent);
+    border-radius: 2px;
+}
+
+.animated-header p {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.highlight {
+    color: #3498db;
+    position: relative;
+    z-index: 1;
+}
+
+.highlight::before {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background-color: rgba(133, 193, 233, 0.3);
+    z-index: -1;
+    border-radius: 4px;
+}
+
+/* Menú de navegación  */
+.main-nav {
+    margin-top: 20px;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 12px;
+    margin: 15px auto 0;
+    background-color:white;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.main-nav ul li {
+    margin: 8px 12px;
+}
+
+.nav-button {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 18px;
+    color: #2e4053;
+    text-decoration: none;
+    padding: 10px 20px;
+    background: linear-gradient(to bottom, #aed6f1, #85c1e9);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.nav-button span {
+    position: relative;
+    z-index: 2;
+}
+
+.nav-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #5dade2, #3498db);
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+.nav-button:hover {
+    color: #530d64;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.nav-button:hover::before {
+    left: 0;
+}
+
+nav ul li a {
+    color: rgb(111, 8, 120);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+nav ul li a i {
+    font-size: 0.9rem;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Secciones */
+section {
+    display: none;
+    padding: 30px;
+    margin: 25px auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.92);
+    max-width: 1000px;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.5s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+section.active {
+    display: block;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(to bottom, #3498db, #85c1e9);
+    border-radius: 3px 0 0 3px;
+}
+
+section h2 {
+    font-size: 2rem;
+    color: #2874a6;
+    margin-bottom: 20px;
+    font-family: 'Baloo 2', cursive;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, transparent);
+    border-radius: 2px;
+}
+
+section ul {
+    list-style-type: none;
+    margin-left: 10px;
+}
+
+section ul li {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 25px;
+}
+
+section ul li::before {
+    content: '•';
+    color: #3498db;
+    font-size: 1.8rem;
+    position: absolute;
+    left: 0;
+    top: -8px;
+}
+
+/* Mensajes motivacionales  */
+.motivational-message {
+    margin: 30px auto 100px;
+    text-align: center;
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.motivational-message p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #34495e;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 0;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.emphasis {
+    color: #2980b9;
+    font-weight: 700;
+}
+
+.highlight-message {
+    font-size: 1.8rem !important;
+    color: #2874a6 !important;
+    font-weight: 700 !important;
+    margin-top: 15px !important;
+    font-family: 'Baloo 2', cursive !important;
+    position: relative;
+    display: inline-block;
+}
+
+.highlight-message::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 25%;
+    width: 50%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #3498db, transparent);
+    border-radius: 2px;
+}
+
+/* Pie de pagina */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 10;
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #4CAF50, #8BC34A, #4CAF50);
+}
+
+/* Responsive  */
+@media (max-width: 768px) {
+    .animated-header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .animated-header p {
+        font-size: 1.1rem;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .main-nav ul li {
+        margin: 6px 0;
+    }
+    
+    section {
+        padding: 20px;
+        margin: 20px 15px;
+    }
+    
+    section h2 {
+        font-size: 1.6rem;
+    }
+    
+    .motivational-message p {
+        font-size: 1.3rem;
+    }
+    
+    .highlight-message {
+        font-size: 1.5rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .animated-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .animated-header p {
+        font-size: 1rem;
+    }
+    
+    .nav-button {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+    
+    section {
+        padding: 15px;
+        margin: 15px 10px;
+    }
+    
+    section h2 {
+        font-size: 1.4rem;
+    }
+    
+    .motivational-message p {
+        font-size: 1.1rem;
+    }
+    
+    .highlight-message {
+        font-size: 1.3rem !important;
+    }
+}
+
+/* Estilos para el carrusel */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 40px auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-cards {
+    display: flex;
+    transition: transform 0.6s ease;
+}
+
+.carousel-card {
+    flex: 0 0 auto;
+    position: relative;
+    height: 300px;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.carousel-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+.carousel-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+
+
+.carousel-card:hover img {
+    transform: scale(1.05);
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7));
+    z-index: 1;
+}
+
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    color: #fff;
+    z-index: 2;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.carousel-card:hover .card-content {
+    transform: translateY(-10px);
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-family: 'Baloo 2', cursive;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.card-info {
+    opacity: 0.8;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.carousel-card:hover .card-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card-button:hover {
+    background-color: #2980b9;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.prev-button, .next-button {
+    background: #3498db;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.prev-button:hover, .next-button:hover {
+    background: #2980b9;
+    transform: scale(1.1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin: 0 20px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: #bdc3c7;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background-color: #3498db;
+    transform: scale(1.2);
+}
+
+.dot:hover {
+    background-color: #95a5a6;
+}
+
+/* Clases para animación de hover */
+.carousel-card.hover {
+    z-index: 10;
+}
+
+/* Responsive para el carrusel */
+@media (max-width: 768px) {
+    .carousel-card {
+        height: 250px;
+    }
+    
+    .card-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .prev-button, .next-button {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-card {
+        height: 200px;
+    }
+    
+    .card-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .card-content p {
+        font-size: 0.9rem;
+    }
+    
+    .card-button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .prev-button, .next-button {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+}
+

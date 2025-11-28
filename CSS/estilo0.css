@@ -1,0 +1,223 @@
+/* Efectos 3D y las animaciones*/
+
+/*logo*/
+.header-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+  
+  .logo-container .logo {
+    width: 100px; 
+    height: auto;
+  }
+  
+  .title-container {
+    flex-grow: 1;
+    text-align: center;
+  }
+  
+
+/* Efecto 3D para el header */
+.animated-header {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: all 0.5s ease;
+    animation: headerFloat 6s ease-in-out infinite;
+}
+
+@keyframes headerFloat {
+    0%, 100% { transform: translateY(0) rotateX(0deg); }
+    50% { transform: translateY(-10px) rotateX(2deg); }
+}
+
+/* Efecto 3D p título principal */
+.animated-header h1 {
+    transition: all 0.5s ease;
+    transform-style: preserve-3d;
+}
+
+.animated-header:hover h1 {
+    transform: translateZ(20px) scale(1.05);
+    text-shadow: 2px 2px 15px rgba(52, 152, 219, 0.6);
+}
+
+/* Efecto 3D para tarjetas del carrusel */
+.carousel-card {
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.carousel-card:hover {
+    transform: rotateY(5deg) translateY(-15px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.carousel-card img {
+    transition: all 0.8s ease;
+}
+
+.carousel-card:hover img {
+    transform: scale(1.1) translateZ(10px);
+}
+
+/* Efectos 3D para botones de navegación */
+.nav-button {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+}
+
+.nav-button:hover {
+    transform: translateY(-3px) translateZ(15px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Animación para secciones */
+section {
+    transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+section.active {
+    animation: sectionAppear 0.8s forwards;
+}
+
+@keyframes sectionAppear {
+    0% { transform: translateY(50px) rotateX(-5deg); opacity: 0; }
+    100% { transform: translateY(0) rotateX(0); opacity: 1; }
+}
+
+section:hover {
+    transform: translateZ(10px) scale(1.01);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Efecto p para el fondo */
+body::before {
+    transition: transform 0.5s ease;
+}
+
+body:hover::before {
+    transform: scale(1.02);
+}
+
+/* Animación para los botones del carrusel */
+.prev-button, .next-button {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+}
+
+.prev-button:hover, .next-button:hover {
+    transform: scale(1.2) rotateY(-15deg);
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.next-button:hover {
+    transform: scale(1.2) rotateY(15deg);
+}
+
+/* Efecto 3D para mensajes motivacionales */
+.motivational-message {
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.motivational-message:hover {
+    transform: translateZ(15px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.highlight-message {
+    transition: all 0.4s ease;
+}
+
+.motivational-message:hover .highlight-message {
+    transform: translateZ(25px) scale(1.1);
+    text-shadow: 2px 2px 15px rgba(52, 152, 219, 0.7);
+}
+
+
+/* Añadir efectos al desplazar la página */
+.scroll-animation {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.scroll-animation.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efecto 3D para el menú de navegación */
+.main-nav ul {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.main-nav ul li {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.main-nav ul li:hover {
+    transform: translateZ(15px) scale(1.1);
+}
+
+/* Animación para los enlaces del menú */
+nav ul li a {
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+}
+
+nav ul li a:hover {
+    transform: translateY(-5px) translateZ(20px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Efecto 3D para los puntos del carrusel */
+.dot {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dot.active, .dot:hover {
+    transform: scale(1.4) translateZ(10px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto para la card-info en el carrusel */
+.card-info {
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.carousel-card:hover .card-info {
+    transform: translateY(-10px) translateZ(20px);
+}
+
+/* Efecto para el botón de las tarjetas */
+.card-button {
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+}
+
+.card-button:hover {
+    transform: translateZ(15px) scale(1.1);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Animación de carga para toda la página */
+@keyframes pageLoading {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+body {
+    animation: pageLoading 1s ease-out forwards;
+}

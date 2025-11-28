@@ -1,0 +1,572 @@
+/* Estilos generales */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: 'Lora', 'Georgia', serif;    line-height: 1.8;
+    background-color: #f9f7fe;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Encabezado */
+header {
+    background: linear-gradient(45deg, #ef53f4, #5dade2, #ef53f4);
+    color: #ffffff;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px #f20202e6;
+    position: relative;
+    overflow: hidden;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header h1 i {
+    margin-right: 10px;
+    animation: pulse-soft 2s infinite;
+}
+
+header img {
+    width: 120px;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease;
+}
+
+/* Animación del título */
+.animate-title {
+    animation: fadeInDown 1.2s ease-out forwards;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación de imagen flotante */
+.float-image {
+    animation: floating 6s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-10px) rotate(1deg);
+    }
+    50% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    75% {
+        transform: translateY(10px) rotate(-1deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+/* Navegación */
+nav {
+    margin: 15px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+nav ul li a i {
+    margin-right: 5px;
+    transition: transform 0.3s ease;
+}
+
+nav ul li a:hover i {
+    transform: scale(1.2);
+}
+
+nav ul li a:hover {
+    background-color: #fff;
+    color: #5dade2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+nav ul li a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transition: all 0.4s ease;
+}
+
+nav ul li a:hover:before {
+    left: 100%;
+}
+
+/* Contenido */
+.content {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Secciones (cards) con fade-in al scroll */
+section {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Efecto hover para cards */
+.card-hover {
+    transition: all 0.5s ease;
+}
+
+.card-hover:hover {
+    background: linear-gradient(135deg, #f9f9f9, #ffffff);
+    border-left: 5px solid #3498db;
+}
+
+section h2 {
+    color: #2980b9;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+section h2 i {
+    margin-right: 10px;
+    color: #3498db;
+}
+
+section h2:after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 80px;
+    height: 2px;
+    background-color: #85c1e9;
+    transition: width 0.3s ease;
+}
+
+section:hover h2:after {
+    width: 150px;
+}
+
+section h3 {
+    color: #3498db;
+    margin: 18px 0 12px;
+    font-size: 1.4em;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+section h3 i {
+    margin-right: 8px;
+    color: #5dade2;
+}
+
+section p {
+    margin-bottom: 15px;
+    color: #555;
+    text-align: justify;
+}
+
+/* Iconos con pulso */
+.pulse-icon {
+    animation: pulse-soft 2s infinite;
+}
+
+@keyframes pulse-soft {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Animación de imágenes */
+.animated-image {
+    width: 280px;
+    height: auto;
+    float: right;
+    margin: 5px 0 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+    object-fit: cover;
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.animated-image.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.animated-image:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Animación de pulso para imágenes especiales */
+.pulse {
+    animation: pulse-animation 3s infinite;
+}
+
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(52, 152, 219, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(52, 152, 219, 0);
+    }
+}
+
+/* Sección de icono */
+.section-icon {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background-color: #3498db;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Animación de listas que se revelan */
+.reveal-list li {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.5s ease;
+}
+
+.reveal-list.is-visible li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Delay para cada elemento de la lista */
+.reveal-list.is-visible li:nth-child(1) { transition-delay: 0.1s; }
+.reveal-list.is-visible li:nth-child(2) { transition-delay: 0.3s; }
+.reveal-list.is-visible li:nth-child(3) { transition-delay: 0.5s; }
+.reveal-list.is-visible li:nth-child(4) { transition-delay: 0.7s; }
+.reveal-list.is-visible li:nth-child(5) { transition-delay: 0.9s; }
+
+/* Listas */
+ol, ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+ol:not([type]) {
+    list-style-type: decimal;
+    padding-left: 20px;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+ul li, ol li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 5px;
+}
+
+/* Listas con iconos */
+.icon-list {
+    list-style-type: none;
+    padding-left: 5px;
+}
+
+.icon-list li {
+    padding-left: 25px;
+    position: relative;
+}
+
+.icon-list li i {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    color: #3498db;
+}
+
+
+/* Enlaces y botones */
+a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* Botón volver al inicio con hover effect */
+.btn-hover {
+    display: inline-block;
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.5s ease;
+    margin: 20px 0;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-hover i {
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+.btn-hover:hover i {
+    transform: translateX(-3px);
+}
+
+.btn-hover:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.5s ease;
+    z-index: -1;
+}
+
+.btn-hover:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    color: white;
+}
+
+.btn-hover:hover:before {
+    left: 100%;
+}
+
+/* Pie de página */
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+    border-top: 4px solid #3498db;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.social-icons {
+    margin-bottom: 15px;
+}
+
+.social-icons a {
+    color: #ecf0f1;
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #3498db;
+    transform: translateY(-3px);
+}
+
+/* RESPONSIVE: Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+    
+    header img {
+        width: 250px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .animated-image {
+        float: none;
+        display: block;
+        margin: 15px auto;
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    section {
+        padding: 20px 15px;
+    }
+    
+    section h2 {
+        font-size: 1.5em;
+    }
+    
+    section h3 {
+        font-size: 1.3em;
+    }
+}
+
+/* Animación de ripple para botones */
+@keyframes ripple {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0.5;
+    }
+    100% {
+        width: 500px;
+        height: 500px;
+        opacity: 0;
+    }
+}
+ /* Estilos para el botón de registro */
+ .registro-button {
+    display: block;
+    width: 300px;
+    margin: 20px auto;
+    padding: 15px 20px;
+    background-color: #52016370;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+    position: relative;
+    z-index: 100;
+}
+
+.registro-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.registro-button i {
+    margin-right: 10px;
+}
+
+/* Animación de pulso para el botón */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Contenedor para el banner de registro */
+.registro-banner {
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: 10px;
+    border-left: 5px solid #4CAF50;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.registro-banner h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
